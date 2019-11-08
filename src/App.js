@@ -15,7 +15,7 @@ class App extends React.Component {
 
   componentDidMount() {
     axios
-      .get("http://jsonplaceholder.typicode.com/todos?_limit=10")
+      .get("https://jsonplaceholder.typicode.com/todos?_limit=10")
       .then(res => this.setState({ todos: res.data }));
   }
   //toggle complete
@@ -41,7 +41,7 @@ class App extends React.Component {
   };
  */
   delTodo = id => {
-    axios.delete(`http://jsonplaceholder.typicode.com/todos/${id}`).then(res =>
+    axios.delete(`https://jsonplaceholder.typicode.com/todos/${id}`).then(res =>
       this.setState({
         todos: [...this.state.todos.filter(todo => todo.id !== id)]
       })
@@ -52,7 +52,7 @@ class App extends React.Component {
   debugger;
   addTodo = title => {
     axios
-      .post("http://jsonplaceholder.typicode.com/todos", {
+      .post("https://jsonplaceholder.typicode.com/todos", {
         title: title,
         completed: false
       })
